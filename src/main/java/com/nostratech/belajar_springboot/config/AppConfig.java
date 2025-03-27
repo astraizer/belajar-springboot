@@ -20,7 +20,7 @@ public class AppConfig {
     @Bean
     public Author author(){
         Author author = new Author();
-        author.setName("Testname");
+        author.setName("Test name 2");
         return author;
     }
 

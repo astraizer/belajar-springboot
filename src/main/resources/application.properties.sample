@@ -1,0 +1,12 @@
+spring.application.name=belajar-springboot
+server.port=1234
+
+#custom configuration
+app.currency = USD
+app.name=Belajar Spring Boot
+
+
+#---
+spring.config.activate.on-profile=dev
+server.port=8089
+

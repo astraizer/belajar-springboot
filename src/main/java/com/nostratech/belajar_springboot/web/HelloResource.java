@@ -1,5 +1,6 @@
 package com.nostratech.belajar_springboot.web;
 
+import com.nostratech.belajar_springboot.config.ApplicationProperties;
 import com.nostratech.belajar_springboot.model.Author;
 import com.nostratech.belajar_springboot.model.Book;
 import com.nostratech.belajar_springboot.service.EmailService;
@@ -12,21 +13,22 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("hello")
 public class HelloResource {
 
-    @Value("${test.name}")
-    private String name;
+    private ApplicationProperties applicationProperties;
 
-    @Autowired
     private Book book;
-
-    @Autowired
     private Author author;
-
-    @Autowired
     private EmailService emailService;
+
+    public HelloResource(ApplicationProperties applicationProperties, Book book, Author author, EmailService emailService) {
+        this.applicationProperties = applicationProperties;
+        this.book = book;
+        this.author = author;
+        this.emailService = emailService;
+    }
 
     @GetMapping
     public String hello() {
-        return "Hello "+name;
+        return "Hello World "+applicationProperties.getName() +" ,"+applicationProperties.getCurrency();
     }
 
     @GetMapping("/book")
