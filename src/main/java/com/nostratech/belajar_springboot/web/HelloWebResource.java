@@ -11,6 +11,6 @@ public class HelloWebResource {
 
     @GetMapping
     public String hello() {
-        return "test/Hello";
+        return "Hello";
     }
 }

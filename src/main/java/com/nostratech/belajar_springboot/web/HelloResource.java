@@ -4,10 +4,9 @@ import com.nostratech.belajar_springboot.config.ApplicationProperties;
 import com.nostratech.belajar_springboot.model.Author;
 import com.nostratech.belajar_springboot.model.Book;
 import com.nostratech.belajar_springboot.service.EmailService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("hello")
